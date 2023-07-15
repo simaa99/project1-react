@@ -1,0 +1,17 @@
+.or-line{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.188rem;
+    align-items: center;
+}
+
+.or-line > div{
+    width: 100%;
+    height: 1px;
+    background-color: #F5F5F5;
+}
+.or-line> span{
+    color: #BABABA;
+    font-size:0.75rem ;
+    font-weight: 400;
+}
