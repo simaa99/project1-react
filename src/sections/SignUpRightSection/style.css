@@ -1,0 +1,113 @@
+.login-section {
+  padding: 4.625rem 0rem 4.25rem 4.813rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.188rem;
+  width: 100%;
+}
+.arrow {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.563rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow > span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8692a6;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 26.625rem;
+  margin: 0 auto;
+}
+.line-sign-up {
+  width: 100%;
+  height: 1px;
+  background-color: #f5f5f5;
+}
+.input-view {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+.input-view:nth-child(2) {
+  margin-bottom: 1.25rem;
+}
+.input-view > label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #696f79;
+}
+.input-view > input {
+  padding: 1.438rem 0rem 1.438rem 1.875rem;
+  border-radius: 6px;
+  border: 1px solid #8692a6;
+  outline: none;
+}
+
+.input-view > input::placeholder {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #8692a6;
+}
+
+.check-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  margin-right: 0.875rem;
+  position: relative;
+  top: 3px;
+}
+
+.password-strength-indicator {
+  position: relative;
+}
+
+.indicator {
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #c4c4c4;
+}
+
+.weak {
+  background-color: red;
+}
+
+.strong {
+  background-color: yellow;
+}
+
+.very-strong {
+  background-color: green;
+}
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -10px;
+}
+.login-button {
+  background-color: white !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  color: black !important;
+  font-weight: 500;
+}
+@media only screen and (max-width: 912px) {
+  .login-section {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .form-wrapper {
+    width: 100%;
+  }
+}
