@@ -1,0 +1,52 @@
+.quote-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-side > img:first-child {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.quote-desc,
+.quote-name {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 2.375rem;
+  font-family: "Inter";
+}
+
+.quote-desc {
+  margin-bottom: 3.688rem;
+  width: 29.563rem;
+}
+
+.quote-italic {
+  color: #696f79;
+  font-style: italic;
+}
+.quote-gray {
+  color: #696f79;
+}
+
+.quote-name {
+  display: block;
+  margin-bottom: 1.688rem;
+}
+
+.quote-side > img:last-child {
+  margin: 0 0 0 auto;
+}
+
+.qoute-end {
+  width: 2.063rem;
+  height: 2.063rem;
+}
+
+.quote-login-end {
+  width: 21rem;
+  height: 26.125rem;
+  position: relative;
+  top: -8rem;
+}
