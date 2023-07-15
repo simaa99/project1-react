@@ -1,0 +1,28 @@
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo-img {
+  width: 3.264rem;
+  height: 3.563rem;
+}
+
+.logo-login {
+  width: 5.898rem;
+  height: 6.438rem;
+}
+
+.logo-title {
+  font-size: 1rem;
+  color: #fff;
+  font-family: "Raanana";
+  font-weight: 400;
+}
+
+.title-login {
+  font-size: 4.5rem;
+  color: #1565d8;
+  font-family: "Righteous";
+  font-weight: 400;
+}
