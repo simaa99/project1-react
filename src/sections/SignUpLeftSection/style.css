@@ -1,0 +1,20 @@
+.signUp-left {
+  padding: 3.813rem 5.563rem 14rem;
+  background-image: linear-gradient(
+      rgba(21, 101, 216, 0.9),
+      rgba(21, 101, 216, 0.9)
+    ),
+    url("../../assets/signUpBg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40.125rem;
+  height: 64rem;
+}
+.SignUp-left-bottom {
+  margin-top: 13.25rem;
+}
+@media only screen and (max-width: 912px) {
+  .signUp-left  {
+    display: none;
+  }
+}
