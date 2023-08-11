@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import socialData from '../../mock/social'
-import './style.css'
-export default class index extends Component {
-  render() {
-    return (
-      <div className="social-icon-view">
-        <div className="social">
+import React from "react";
+import socialData from '../../mock/social';
+import './style.css';
+
+const SocialIconComponent = () => {
+  return (
+    <div className="social-icon-view">
+      <div className="social">
         {socialData.map((item) => (
           <div className="social-icon" key={item.id}>
             <div>
@@ -13,10 +13,11 @@ export default class index extends Component {
             </div>
           </div>
         ))}
-        </div>
-
-        <div className="socail-line"></div>
       </div>
-    );
-  }
-}
+
+      <div className="socail-line"></div>
+    </div>
+  );
+};
+
+export default SocialIconComponent;

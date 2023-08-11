@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import './style.css'
-export default class index extends Component {
-  render() {
-    const {title , subTitle} = this.props;
-    return (
-      <div className='title'>
-        <span>{title}</span>
-        <span>{subTitle}</span>
-      </div>
-    )
-  }
-}
+import React from 'react';
+import './style.css';
+
+const TitleComponent = ({ title, subTitle }) => {
+  return (
+    <div className='title'>
+      <span>{title}</span>
+      <span>{subTitle}</span>
+    </div>
+  );
+};
+
+export default TitleComponent;

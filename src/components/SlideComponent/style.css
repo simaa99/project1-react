@@ -1,0 +1,70 @@
+.slide-view{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+/* .horizontal-scroll-section {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+   */
+  .card-view-section {
+    display: flex;
+    margin-right: 20px; 
+    /* overflow-x: scroll; */
+  }
+  .horizontal-scroll-section {
+    width: 100%;
+    overflow: scroll;
+    white-space: nowrap;
+
+  }
+
+  /* Scrollbar container */
+.horizontal-scroll-section {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden; /* Hide the vertical scrollbar */
+    white-space: nowrap;
+  }
+  
+  /* Track */
+  .horizontal-scroll-section::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  .horizontal-scroll-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(#F0C673, #785E2A);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .horizontal-scroll-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#998152, #5E471D);
+  }
+  
+  /* X-axis scrollbar */
+  .horizontal-scroll-section::-webkit-scrollbar {
+    height: 5px; /* Height of the scrollbar */
+  }
+  
+  /* X-axis handle */
+  .horizontal-scroll-section::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#F0C673, #785E2A);
+    border-radius: 10px;
+  }
+  
+  /* X-axis handle on hover */
+  .horizontal-scroll-section::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(#998152, #5E471D);
+  }
+  
+  /* For Firefox */
+  .horizontal-scroll-section {
+    scrollbar-color: #785E2A #998152;
+  }

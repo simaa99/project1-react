@@ -1,218 +1,104 @@
-import React from "react";
-import "./style.css";
-import ButtonComponent from "../../components/ButtonComponent";
+import React, { Fragment, useState } from "react";
+import { useAuthContext } from "../../contexts/AuthContext";
 import TitleComponent from "../../components/TitleComponent";
 import OrLineComponent from "../../components/OrLineComponent";
+import ButtonComponent from "../../components/ButtonComponent";
+import { SIGNUP_INPUTS } from "../../constants/auth";
 import arrowBack from "../../assets/arrow_back_ios_24px.svg";
-class RegistrationPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      repeatPassword: "",
-      passwordStrength: "",
-      emailError: "",
-      passwordError: "",
-      repeatPasswordError: "",
-      privacyPolicyError: "",
-      agreeToPrivacyPolicy: false,
-    };
-  }
+import "./style.css"; // Import the CSS styles
+import { Link } from "react-router-dom";
+import { PATHS } from "../../router/paths";
 
-  handleEmailChange = (event) => {
-    this.setState({ email: event.target.value });
-  };
+const SignUpPage = () => {
+  const { signup, isLoading } = useAuthContext();
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    repassword: "",
+  });
 
-  handlePasswordChange = (event) => {
-    const password = event.target.value;
-    const passwordStrength = this.calculatePasswordStrength(password);
-    this.setState({ password, passwordStrength });
-  };
+  const [rePasswordError, setRePasswordError] = useState("");
 
-  handleRepeatPasswordChange = (event) => {
-    this.setState({ repeatPassword: event.target.value });
-  };
-
-  handlePrivacyPolicyChange = () => {
-    this.setState((prevState) => ({
-      agreeToPrivacyPolicy: !prevState.agreeToPrivacyPolicy,
-    }));
-  };
-
-  calculatePasswordStrength = (password) => {
-    const consecutiveRepeatRegex = /(.)\1{2,}/;
-
-    let strength = "weak";
-    if (password.length >= 8) {
-      strength = "strong";
-      if (
-        /[a-z]/.test(password) &&
-        /[A-Z]/.test(password) &&
-        /\d/.test(password) &&
-        /\W/.test(password)
-      ) {
-        strength = "very-strong";
-      }
+  const validatePasswordMatch = () => {
+    if (formData.password !== formData.repassword) {
+      setRePasswordError("Passwords do not match!");
+      return false;
     }
-
-    if (consecutiveRepeatRegex.test(password)) {
-      strength = "weak";
-    }
-
-    return strength;
+    setRePasswordError("");
+    return true;
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform validation on email, password, and privacy policy agreement
-    const { email, password, repeatPassword, agreeToPrivacyPolicy } =
-      this.state;
-
-    let emailError = "";
-    let passwordError = "";
-    let repeatPasswordError = "";
-    let privacyPolicyError = "";
-
-    if (email.trim() === "") {
-      emailError = "Email is required!";
-    }
-
-    if (password.trim() === "") {
-      passwordError = "Password is required!";
-    }
-
-    if (password !== repeatPassword) {
-      repeatPasswordError = "Passwords do not match!";
-    }
-
-    if (!agreeToPrivacyPolicy) {
-      privacyPolicyError = "You must agree to the Privacy Policy!";
-    }
-
-    this.setState({
-      emailError,
-      passwordError,
-      repeatPasswordError,
-      privacyPolicyError,
-    });
-
-    if (
-      emailError ||
-      passwordError ||
-      repeatPasswordError ||
-      privacyPolicyError
-    ) {
+    if (!validatePasswordMatch()) {
       return;
     }
 
-    setTimeout(() => {
-      this.setState({ registrationSuccessful: true }, () => {
-        window.location.href = "/login";
-      });
-    }, 2000);
+    signup({
+      name: formData.username,
+      email: formData.email,
+      password: formData.password,
+    });
   };
 
-  render() {
-    const {
-      email,
-      password,
-      repeatPassword,
-      passwordStrength,
-      emailError,
-      passwordError,
-      repeatPasswordError,
-      privacyPolicyError,
-      agreeToPrivacyPolicy,
-    } = this.state;
+  const handleChangeInput = ({ target: { value, name } }) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-    let strengthText = "";
-
-    if (passwordStrength === "weak") {
-      strengthText = "Weak";
-    } else if (passwordStrength === "strong") {
-      strengthText = "Strong";
-    } else if (passwordStrength === "very-strong") {
-      strengthText = "Very Strong";
-    }
-
-    return (
-      <>
-        <div className="login-section">
-          <div className="arrow">
-            <img src={arrowBack} alt="arrowBack" className="back-img" />
-            <span>Back</span>
-          </div>
-          <div className="form-wrapper">
-            <TitleComponent
-              title="Register Individual Account!"
-              subTitle="For the purpose of gamers regulation, your details are required."
-            />
-            <div className="line-sign-up"></div>
-            <form onSubmit={this.handleSubmit}>
-              <div className="input-view">
-                <label>Email address*</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={this.handleEmailChange}
-                  placeholder="Enter email address"
-                />
-                <div className="error">{emailError}</div>
-              </div>
-
-              <div className="input-view">
-                <label>Create password*</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={this.handlePasswordChange}
-                  placeholder="Password"
-                />
-                <div className="password-strength-indicator">
-                  <div className={`indicator ${passwordStrength}`} />
-                  <p>{strengthText}</p>
-                </div>
-                <div className="error">{passwordError}</div>
-              </div>
-
-              <div className="input-view">
-                <label>Repeat password*</label>
-                <input
-                  type="password"
-                  value={repeatPassword}
-                  onChange={this.handleRepeatPasswordChange}
-                  placeholder="Repeat password"
-                />
-                <div className="error">{repeatPasswordError}</div>
-              </div>
-
-              <div className="input-view">
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={agreeToPrivacyPolicy}
-                    onChange={this.handlePrivacyPolicyChange}
-                    required
-                    className="check-box"
-                  />
-                  I agree to terms & conditions
-                </label>
-                <div className="error">
-                  {!agreeToPrivacyPolicy && privacyPolicyError}
-                </div>
-              </div>
-
-              <ButtonComponent btn="Register Account" type="submit" />
-              <OrLineComponent />
-            </form>
-            <ButtonComponent btn="login" btnStyle="login-button" />
-          </div>
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="login-section">
+        <div className="arrow">
+          <img src={arrowBack} alt="arrowBack" className="back-img" />
+          <Link to={PATHS.LOGIN}>Back</Link>
         </div>
-      </>
-    );
-  }
-}
+        <div className="form-wrapper">
+          <TitleComponent
+            title="Register Individual Account!"
+            subTitle="For the purpose of gamers regulation, your details are required."
+          />
+          <div className="line-sign-up"></div>
 
-export default RegistrationPage;
+          {SIGNUP_INPUTS.map((input) => (
+            <Fragment key={input.id}>
+              <div className="input-view">
+                <label htmlFor={input.id}>{input.label}</label>
+                <input
+                  type={input.type}
+                  id={input.id}
+                  name={input.id}
+                  onChange={handleChangeInput}
+                  value={formData[input.id]}
+                  required
+                />
+              </div>
+            </Fragment>
+          ))}
+
+          <div className="input-view">
+            <label>
+              <input type="checkbox" required className="check-box" />I agree to
+              terms & conditions
+            </label>
+            <div className="error">
+              {!isLoading && <p>{rePasswordError}</p>}
+            </div>
+          </div>
+
+          <ButtonComponent
+            btn={isLoading ? "Loading..." : "Register Account"}
+            type="submit"
+          />
+          <OrLineComponent />
+          <Link className="login-button" to={PATHS.LOGIN}>
+            Login
+          </Link>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+export default SignUpPage;

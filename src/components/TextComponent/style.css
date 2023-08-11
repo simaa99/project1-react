@@ -1,0 +1,11 @@
+.light .textComponent {
+  color: #000000;
+  font-weight: 800;
+  font-size: 35px;
+}
+
+.dark .textComponent {
+  color: #d8d8d8;
+  font-weight: 800;
+  font-size: 35px;
+}

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import './style.css'
-export default class index extends Component {
-  render() {
-    const {btnStyle , btn ,type} = this.props;
-    return (
-      <button className={`btn ${btnStyle}`} type={type}>{btn}</button>
-    )
-  }
-}
+import React from 'react';
+import './style.css';
+
+const ButtonComponent = ({ btnStyle, btn, type }) => (
+  <button className={`btn ${btnStyle}`} type={type}>
+    {btn}
+  </button>
+);
+
+export default ButtonComponent;

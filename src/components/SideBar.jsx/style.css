@@ -1,0 +1,27 @@
+.sideBarContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10%;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+}
+.light .right-line-side {
+  width: 9px;
+  margin: 1.5rem 0rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+.dark .right-line-side {
+  width: 9px;
+  margin: 1.5rem 0rem;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  background-color: #222222;
+}
