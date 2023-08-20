@@ -9,6 +9,7 @@ export const PATHS = {
   ADMIN: {
     ROOT: "/admin",
     USERS: "/admin/users",
+    DETAIL:`/admin/:id`
   },
   ERRORS: {
     NOT_FOUND: "404",

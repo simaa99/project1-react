@@ -8,7 +8,6 @@ const LoginPage = React.lazy(() => import("../pages/LoginPage"));
 const SignUpPage = React.lazy(() => import("../pages/SignUpPage"));
 const UserPage = React.lazy(() => import("../pages/UserPage/UserPage"));
 const UserDetails = React.lazy(() => import("../pages/UserPage/UserDetails"));
-const AdminPage = React.lazy(() => import("../pages/AdminPage/AdminPage"));
 const UserTable = React.lazy(() => import("../pages/AdminPage/UserTable"));
 
 // available for admins only
@@ -19,7 +18,11 @@ const adminPages = [
     children: [
       {
         index: true,
-        element: <AdminPage />,
+        element: <UserPage/>,
+      },
+      {
+        path: PATHS.ADMIN.DETAIL,
+        element: <UserDetails />,
       },
       {
         path: PATHS.ADMIN.USERS,
