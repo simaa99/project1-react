@@ -35,15 +35,7 @@ export const SIGNUP_INPUTS = [
   ];
 
   export const LOGIN_INPUTS = [
-
-    {
-      label: "email",
-      type: "email",
-      id: "email",
-    },
-    {
-      label: "password",
-      type: "password",
-      id: "password",
-    }
+    { id: "email", label: "Email", type: "email" },
+    { id: "password", label: "Password", type: "password" },
+  
   ];

@@ -14,7 +14,7 @@ export default class index extends Component {
           logoTitle="Gamers"
           isLogin={true}
           isTitleLogin={true}
-        />{" "}
+        />
         <div className="logo-left-bottom">
           <QuoteComponent
             quoteIcon={iconQuote}

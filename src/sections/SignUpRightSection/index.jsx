@@ -5,7 +5,7 @@ import OrLineComponent from "../../components/OrLineComponent";
 import ButtonComponent from "../../components/ButtonComponent";
 import { SIGNUP_INPUTS } from "../../constants/auth";
 import arrowBack from "../../assets/arrow_back_ios_24px.svg";
-import "./style.css"; // Import the CSS styles
+import "./style.css"; 
 import { Link } from "react-router-dom";
 import { PATHS } from "../../router/paths";
 

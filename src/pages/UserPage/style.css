@@ -1,4 +1,45 @@
-.profile{
-    display: flex;
-    flex-direction: row;
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+.user-detail-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.user-details-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.light .user-card-info {
+  width: 50%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
+  background-color: #222222;
+  margin: 0 auto;
+  border-radius: 38px;
+  color: #fff;
+}
+
+.dark .user-card-info {
+  width: 50%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 38px;
+  color: #222222;
+}
+
+.user-card-info > h1 {
+  padding-bottom: 2rem;
 }

@@ -1,15 +1,15 @@
 import { Navigate } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import SignUpPage from "../pages/SignUpPage";
-
+import React from "react";
 import { PATHS } from "./paths";
 import AdminGuard from "../components/Guards/AdminGuard";
 import GuestGuard from "../components/Guards/GuestGuard";
 import UserGuard from "../components/Guards/UserGuard";
-import UserPage from "../pages/UserPage/UserPage";
-import UserDetails from "../pages/UserPage/UserDetails";
-import AdminPage from "../pages/AdminPage/AdminPage";
-import UserTable from "../pages/AdminPage/UserTable";
+const LoginPage = React.lazy(() => import("../pages/LoginPage"));
+const SignUpPage = React.lazy(() => import("../pages/SignUpPage"));
+const UserPage = React.lazy(() => import("../pages/UserPage/UserPage"));
+const UserDetails = React.lazy(() => import("../pages/UserPage/UserDetails"));
+const AdminPage = React.lazy(() => import("../pages/AdminPage/AdminPage"));
+const UserTable = React.lazy(() => import("../pages/AdminPage/UserTable"));
 
 // available for admins only
 const adminPages = [

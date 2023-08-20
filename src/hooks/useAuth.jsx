@@ -5,7 +5,7 @@ import { AUTH_API } from "../config/api";
 import axios from "axios";
 
 const getIsAuth = () => localStorage.getItem("isAuth") || false;
-const getUserData = () => JSON.stringify(localStorage.getItem("user")) || null;
+const getUserData = () => JSON.parse(localStorage.getItem("user")) || null;
 const getToken = () => localStorage.getItem("token") || null;
 const getRole = () => localStorage.getItem("role") || ROLES.GUEST;
 // console.log("isAuth:", localStorage.getItem("isAuth"));
@@ -36,7 +36,7 @@ const reduce = (state, action) => {
 
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
-      localStorage.setItem("user", JSON.stringify(action.payload.user));
+      localStorage.setItem("user", JSON.stringify(action.payload));
 
       return {
         ...state,

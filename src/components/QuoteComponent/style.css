@@ -1,6 +1,7 @@
 .quote-side {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .quote-side > img:first-child {
@@ -46,7 +47,8 @@
 
 .quote-login-end {
   width: 21rem;
-  height: 26.125rem;
-  position: relative;
-  top: -8rem;
+  height: 21rem;
+  position: absolute;
+  top: 12rem;
+  left:15rem;
 }
