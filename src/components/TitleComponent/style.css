@@ -1,18 +1,27 @@
-.title{
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.625rem;
+.title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.625rem;
 }
 
 .title > span:first-child {
-    font-size: 1.875rem;
-    color:#000;
-    font-weight: 700;
+  font-size: 1.875rem;
+  color: #000;
+  font-weight: 700;
 }
 
-.title > span:last-child{
-    color:#8692A6;
-    font-weight:400 ;
-    font-size: 1.125rem;
-    width: 90%;
+.title > span:last-child {
+  color: #8692a6;
+  font-weight: 400;
+  font-size: 1.125rem;
+  /* width: 90%; */
+}
+
+.classTitle {
+  justify-content: center;
+  align-items: center;
+}
+
+.classTitle > span:last-child {
+  text-align: center;
 }

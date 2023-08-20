@@ -1,70 +1,106 @@
-.slide-view{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem;
-    padding-left: 1.5rem;
+.slide-view {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding-left: 1.5rem;
 }
 
-/* .horizontal-scroll-section {
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
-  
-   */
-  .card-view-section {
-    display: flex;
-    margin-right: 20px; 
-    /* overflow-x: scroll; */
-  }
-  .horizontal-scroll-section {
-    width: 100%;
-    overflow: scroll;
-    white-space: nowrap;
+.slide-container {
+  margin-top: 2rem;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.slide-section {
+  display: flex;
+  width: 130%;
+  flex-direction: row;
+  column-gap: 1.75rem;
+  position: relative;
+}
+.card-slide-card {
+  width: 32.5%;
+  height: 19.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3.75rem;
+}
 
-  }
+.first-card {
+  position: relative;
+  background-image: url(../../assets/Rectangle\ 2.png);
+}
 
-  /* Scrollbar container */
-.horizontal-scroll-section {
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden; /* Hide the vertical scrollbar */
-    white-space: nowrap;
-  }
-  
-  /* Track */
-  .horizontal-scroll-section::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  /* Handle */
-  .horizontal-scroll-section::-webkit-scrollbar-thumb {
-    background: linear-gradient(#F0C673, #785E2A);
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  .horizontal-scroll-section::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(#998152, #5E471D);
-  }
-  
-  /* X-axis scrollbar */
-  .horizontal-scroll-section::-webkit-scrollbar {
-    height: 5px; /* Height of the scrollbar */
-  }
-  
-  /* X-axis handle */
-  .horizontal-scroll-section::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(#F0C673, #785E2A);
-    border-radius: 10px;
-  }
-  
-  /* X-axis handle on hover */
-  .horizontal-scroll-section::-webkit-scrollbar-thumb:hover {
-    background-image: linear-gradient(#998152, #5E471D);
-  }
-  
-  /* For Firefox */
-  .horizontal-scroll-section {
-    scrollbar-color: #785E2A #998152;
-  }
+.second-card {
+  position: relative;
+  background-image: url(../../assets/Rectangle\ 3.png);
+}
+
+.third-card {
+  position: relative;
+  background-image: url(../../assets/Rectangle\ 4.png);
+}
+
+.wars-img {
+  position: absolute;
+  top: -7rem;
+  right: -6rem;
+  height: 23rem;
+  z-index: 1;
+}
+
+.sbider {
+  top: 0rem;
+  left: 0rem;
+  height: 50rem;
+  z-index: 1;
+}
+
+.avater-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.avater-img-third {
+  right: 0rem;
+  left: auto;
+  top: -10.25rem;
+}
+
+.text-card-avatar {
+  color: #d8d8d8;
+  font-size: 25px;
+  font-weight: 800;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 3;
+}
+
+.text-card-avatar-third {
+  bottom: 0;
+  right: auto;
+  left: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.slide-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.slide-container::-webkit-scrollbar-thumb {
+  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
+  background-color: #222222;
+  border-radius: 38px;
+}
+.slide-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -2,8 +2,10 @@
   padding: 4.625rem 0rem 4.25rem 4.813rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 6.188rem;
-  width: 100%;
+  width: 50%;
 }
 .arrow {
   display: flex;

@@ -1,21 +1,66 @@
-.payload-view{
-    display: flex;
-    flex-direction: row;
+.payload-view {
+  display: flex;
+  flex-direction: row;
 }
 
-.img-circle-view{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+.img-circle-view {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.payload-view {
+  position: relative;
+}
+.last-played-view {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+}
+.img-circle-view > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  right: 2rem;
+}
+.light .text-payload {
+  border-radius: 0px 25px 25px 0px;
+  background: #fbfbfb;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  height: 3rem;
+  top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  width: 15rem;
+}
+.dark .text-payload > p {
+  color: #d8d8d8;
+  font-size: 12px;
+  font-weight: 300;
+}
+.light .text-payload > p {
+  color: #000;
+  font-size: 12px;
+  font-weight: 300;
 }
 
-.img-circle-view > img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-.text-payload{
-    background-color: antiquewhite;
-    padding: 10px;
+.dark .text-payload {
+  border-radius: 0px 25px 25px 0px;
+  background: #515151;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  height: 3rem;
+  top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  width: 15rem;
 }
