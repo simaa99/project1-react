@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import useAuth from "../../hooks/useAuth"; // Update the path accordingly
+import useAuth from "../../hooks/useAuth"; 
 import SideBarComponent from "../../components/SideBar.jsx/SideBarComponent";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import './style.css'
