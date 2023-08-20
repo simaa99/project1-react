@@ -1,7 +1,7 @@
 // HeaderComponent.jsx
 import React from 'react';
 import './style.css';
-import profileImg from '../../assets/Rectangle 1.svg';
+import profileImg from '../../assets/default-avatar-profile-icon-vector-social-media-user-photo-700-205577532.jpg';
 import { Link } from 'react-router-dom';
 import { PATHS } from '../../router/paths';
 import { useAuthContext } from '../../contexts/AuthContext';
